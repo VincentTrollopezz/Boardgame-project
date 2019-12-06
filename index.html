@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Jace Dang and Samuel Torres</title>
-
+    
 </head>
-<body>
+<body onload="startGame">
 <h1 style="text-align: center;" >
     <a href="Chance Highway Rules.pdf" style="color: grey; font-size: 45px;" >READ IT HOMIES</a>
 </h1>
-<table id= "board" align = "center" width ="1000" bgcolor = "#66C6E1" border = "30" >
+<table id= "board" align = "left" width ="1000" bgcolor = "#66C6E1" border = "30" >
     <script> //1st rows</script>
     <tr align="center" height = "100">   
         <td >1</td>
@@ -120,7 +120,54 @@
 
    
 </table>
-     
+<script>
+   // var gameCharaters;
+
+    function component(){
+
+    }
+
+
+    function startGame(){
+        //gameCharaters= new component (40,40,amazonbox.png, 20, 20, "image");
+       
+
+    }
+
+</script>
+
+    <script> // create dice </script>
+    <p id="placeholder"></p>
+    <button id="button">Roll Dice</button>
+    <script src="sketch.js"></script>
+    <style>
+    
+  
+  #placeholder {
+    height: 20px;
+    width: 20px;
+    padding: 25px;
+    margin: 25px ;
+    border: 1px solid rgb(58, 54, 54);
+    border-radius: 10px;  
+    font-size:40px;
+    text-align: right;
+  }
+  button {
+    background-color: rgb(82, 186, 179);
+    border-radius: 6px;
+    border: none;
+    color: rgb(202, 104, 104);
+    padding: 10px;
+    text-transform: uppercase;
+    width: 200px;
+    cursor: pointer;
+    text-align: right;
+  }
+ 
+    
+    </style>
+        
     
 </body>  
 </html>
