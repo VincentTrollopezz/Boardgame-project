@@ -16,7 +16,9 @@
 </h2>
 <h1 style="text-align: center;" >
     <a href="Chance Highway Rules revised.pdf" style="color: rgb(10,0,0); font-size: 30px;" >RULES FOR NEWBIES</a>
+
 </h1>
+<h3>Choose your character and your </h3>
 
 <script>
     //-------create dice-------
@@ -36,13 +38,7 @@
             }
     
         }
-        //--------random cards generator--------
-//     document.getElementsByClassName("card") = function (){randomCards()};
-//     var cards = ["go_backward_1_card.PNG","go_backward_2_card.PNG","go_backward_3_card.PNG","go_forward_1_card.PNG","go_forward_2_card.PNG","go_forward_3_card.PNG","jump_forward_card.PNG","jump_backward_card.PNG","punish_card.PNG","reverse_card.PNG","stop_card.PNG"]
-//    function randomCards () {
-//        document.getElementsByClassName("card").innerHTML="card_up_front.png"
-//        var rdn = Math.floor (Math.random()*(cards.length))
-//    }
+     
     //array contain the div 
    let board = document.querySelectorAll('div[id^="div"]');
    console.log(board);
@@ -61,15 +57,40 @@
         var data = ev.dataTransfer.getData("text");
         ev.target.appendChild(document.getElementById(data));
     }
+
+    //random cards 
+    
+
+    
+        var myCards = [
+        {src: "go_backward_1_card.png"},
+        {src: "go_backward_2_card.png"},
+        {src: "go_backward_3_card.png"},
+        {src: "go_forward_1_card.png"},
+        {src: "go_forward_2_card.png"},
+        {src: "go_forward_3_card.png"},
+        {src: "jump_backward_card.png"},
+        {src: "jump_forward_card.png"},
+        {src: "punish_card.png"},
+        {src: "reverse_card.png"},
+        {src: "stop_card.png"}
+    ];
+        var randomCard = myCards[Math.floor(Math.random()*myCards.length)];
+        
+    
+
  </script>
 
 <script>//board and card set up</script>
     <style type= "text/css">
     
         #board {
-            width: 1000px;
-            height: 1000px;
+            width: 800px;
+            height: 800px;
             border: solid 20px grey;
+            position: relative;
+            top: 50%;
+            left: 29%;
             
             
         }
@@ -79,29 +100,30 @@
             overflow: hidden;
         }
 
-        /*#board > .row:nth-child(even){
-            flex-direction: row-reverse;
-            overflow: hidden;
-        }*/
+        
 
         #board > .row > div {
-            width: 56px;
-            height: 71.5px;
+            width: 44.5px;
+            height: 57.1px;
             box-sizing: border-box;
             padding: 10px;
-            border: solid 3px red;
+            border: solid 1px black;
             overflow: hidden;
+            
         }
     
     
     
-        
+        .black{
+            background-image: url("black.png");
+            z-index: 2;
+            background-color: red;
+        }
         
         .card{
         background-image: url("card_up_front.png");
-        max-width: 100%;
-        max-height: 100%;
         }
+
         .logo{
             background-image: url("logo.png");
             background-color: rgb(202, 96, 96);
@@ -142,15 +164,28 @@
             margin: auto;
         }
         
-        
+        #div1{
+            background-color: burlywood;
+        }
 
+        #div2{
+            background-color: cadetblue;
+        }
+
+        #div3{
+            background-color: yellow;
+        }
+
+        #div4{
+            background-color: pink;
+        }
         
 
     
     </style>
 
 
-<script>//--------DICE AND BUTTON--------</script>
+<!----------DICE AND BUTTON---------->
 <div id="dice1" class="dice" align="center">0 </div>
     <div id="dice2" class="dice" align="center">0 </div>
     <button onclick="rollDice()" align="center">Roll Dice </button>
@@ -158,7 +193,7 @@
     <div>
 
 
-<script>//--------CHAR DRAG AND DROP-------</script>
+<!----------CHAR DRAG AND DROP------->
 Choose your character
 <img id="drag1" src="amazonbox.PNG" draggable="true" ondragstart="drag(event)" width="69" height="69">
 
@@ -172,555 +207,573 @@ Choose your character
 
 
 
+
+
     
 <!-- ---------DIV FOR DRAG AND DROP-------- -->
 <div id="board">
-<div class="row"><!---->
+<div class="row"><!--1-->
     <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
     <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div1" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+    <div id="div2" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    
+    
+</div>
+
+<div class="row"><!--2-->
     <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
     <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
-    <div id="div5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div6" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div7" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div8" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div9" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-
-    <div id="div55" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div56" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div57" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div58" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-
-    <div id="div59" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-
-    <div id="div60" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div61" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div62" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div63" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 </div>
 
-<div class="row"><!---->
-    <div id="div10" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-
-    <div id="div11" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-
-    <div id="div12" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-
-    <div id="div13" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-
-    <div id="div14" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-
-    <div id="div15" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-
-    <div id="div16" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-
-    <div id="div17" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-
-    <div id="div18" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-
-    <div id="div55" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div class="row"><!--3-->
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
-    <div id="div56" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div57" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div58" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div59" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div1" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+    <div id="div2" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div60" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
-    <div id="div61" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div62" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div63" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-</div>
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-<div class="row"><!---->
-    <div id="div19" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div20" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div1" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+    <div id="div2" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div21" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div22" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div1" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+    <div id="div2" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div23" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div24" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div25" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-
-    <div id="div26" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-
-    <div id="div27" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-
-    <div id="div55" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div56" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div57" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div58" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-
-    <div id="div59" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-
-    <div id="div60" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div61" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div62" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div63" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-
-    
-</div>
-
-<div class="row"><!---->
-    <div id="div28" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-
-    <div id="div29" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-
-    <div id="div30" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div31" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div32" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div33" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div34" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div35" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div36" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-
-    <div id="div55" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div56" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div57" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div58" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-
-    <div id="div59" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-
-    <div id="div60" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div61" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div62" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div63" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
     
 </div>
 
-<div class="row"><!---->
-    <div id="div37" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div38" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div class="row"><!--4-->
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div39" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div40" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div41" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div42" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div43" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div44" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div45" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div3" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div55" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div56" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div57" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div58" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div4" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div59" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div60" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div61" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div62" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div63" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-   
-</div>
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-<div class="row"><!---->
-    <div id="div46" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div47" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div48" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div49" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div50" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div51" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div52" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div53" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div54" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div3" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div55" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div56" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div57" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div58" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div4" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div59" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div60" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div61" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div62" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div63" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
 </div>
 
-<div class="row"> <!---7-->
-    <div id="div55" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div class="row"><!--5-->
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
-    <div id="div56" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div57" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div58" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div59" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div60" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div1" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
-    <div id="div61" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div62" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div63" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div2" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div55" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
-    <div id="div56" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div57" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div58" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div59" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div60" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
-    <div id="div61" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
-    <div id="div62" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
-    <div id="div63" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div1" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+    <div id="div2" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    
+    
 </div>
 
-<div class="row"><!---->
-    <div id="div55" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div56" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div57" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div58" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div class="row"><!--6-->
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div59" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div60" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div61" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div62" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div63" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div55" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div56" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div57" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div58" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div59" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div3" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div60" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div4" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
-    <div id="div61" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div62" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div63" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 </div>
 
-<div class="row"><!---->
-    <div id="div55" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div class="row"><!--7-->
+    <div id="div1" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
-    <div id="div56" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div57" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div58" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div2" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div59" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div60" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
-    <div id="div61" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div62" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div63" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div55" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
-    <div id="div56" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div57" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div58" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div59" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div1" class="black" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+    <div id="div2" class="black" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div60" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div1" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
-    <div id="div61" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div2" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
-    <div id="div62" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
-    <div id="div63" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    
+    
 </div>
 
-<div class="row"><!---->
-    <div id="div55" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div56" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div57" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div58" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div class="row"><!--8-->
+    <div id="div3" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div59" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div4" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div60" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div61" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div62" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div63" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div55" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div56" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div57" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div58" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div59" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div60" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" class="black" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" class="black" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
-    <div id="div61" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div62" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div63" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 </div>
 
-<div class="row"><!---->
-    <div id="div55" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div class="row"><!--9-->
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
-    <div id="div56" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div57" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div58" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div59" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div1" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+    <div id="div2" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div60" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
-    <div id="div61" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div62" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div63" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div55" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div1" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
-    <div id="div56" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div57" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div58" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div2" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div59" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div60" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
-    <div id="div61" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
-    <div id="div62" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div1" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
-    <div id="div63" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div2" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    
+    
 </div>
 
-<div class="row"><!---->
-    <div id="div55" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div56" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div57" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div58" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div class="row"><!--10-->
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div59" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div60" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div61" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div62" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div63" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div3" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div55" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div56" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div57" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div58" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div4" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div59" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div60" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
-    <div id="div61" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div62" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div63" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 </div>
 
-<div class="row"><!---->
-    <div id="div55" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div class="row"><!--11-->
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
-    <div id="div56" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div57" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div58" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div59" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div60" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
-    <div id="div61" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div62" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div63" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div55" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
-    <div id="div56" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div57" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div58" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div59" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div1" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+    <div id="div2" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div60" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
-    <div id="div61" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
-    <div id="div62" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
-    <div id="div63" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    
+    
 </div>
 
-<div class="row"><!---->
-    <div id="div55" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div56" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div57" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div58" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div class="row"><!--12-->
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div59" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div60" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div61" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div62" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div63" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div55" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div56" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div57" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div58" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div59" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <div id="div60" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
-    <div id="div61" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div62" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-    <div id="div63" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 </div>
 
+<div class="row"><!--13-->
+    <div id="div1" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+    <div id="div2" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div1" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+    <div id="div2" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div1" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+    <div id="div2" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">G</div>
+    
+    <div id="div2"  ondrop="drop(event)" ondragover="allowDrop(event)">O</div>
+
+    
+    
+</div>
+
+<div class="row"><!--14-->
+    <div id="div3" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" class="card" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)">A</div>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)">L</div>
+    
+</div>
 
 </div>
- 
+<button type="button"onclick=" randomCard">GET CARD</button>
 
-
-
- 
 </body>  
 </html>
